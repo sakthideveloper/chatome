@@ -655,8 +655,6 @@ angular.module('Chatome.Factories')
             Core.callClient.initStream().then(function () {
             });
             Core.messageRec();
-            Core.videoCallRec();
-            //    this.voiceCallRec();
 
         };
 

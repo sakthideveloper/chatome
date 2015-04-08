@@ -1,0 +1,39 @@
+<ion-view on-swipe-left="goBack()">
+    <ion-header-bar class="bar bar-header bar-dark">
+
+        <h1 class="title">{{contactName}}</h1>
+        <button class="button button-clear icon ion-paperclip ng-hide"></button>
+    </ion-header-bar>
+
+    <ion-content delegate-handle="scrollBottom">
+
+        <div ng-repeat="item in messages">
+
+            <ion-item ng-if="currentUser !== item.recipientId" class="item item-avatar-left">
+                <img ng-src="{{currentUserThumb}}">
+                   <p ng-if="item.messageText.indexOf('image:') < -1">{{item.messageText}}</p>
+                   <img class="full-image" ng-src="{{item.image._url}}" ng-if="item.messageText.indexOf(':image:') > -1">
+            </ion-item>
+
+            <ion-item class="item item-avatar-right" ng-if="currentUser == item.recipientId">
+                <img ng-src="{{userThumb}}">
+                   <p> {{item.messageText}}</p>
+                   <img class="full-image" ng-src="{{item.image._url}}" ng-if="item.messageText.indexOf(':image:') > -1">
+            </ion-item>
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="item-input-inset bar-assertive bar-footer">
+
+        <label>
+            <input type="text" style="width: 95vw" ng-model="messageBody" focus-on-keyboard-open="">
+        </label>
+        <button class="button button-icon icon ion-paper-airplane"
+                ng-click="sendMessage(messageBody)" ng-show="sendButton "></button>
+
+        <button class="button button-icon icon ion-image" ng-show="!sendButton" ng-click="selectImage()" for="footerImage"></button>
+        <input hidden type="file" id="footerImage" ng-model="picture"  base-sixty-four-input ng-change="sendImage(picture.filetype,picture.base64)" accept="image/*">
+
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Signup</h1>
+    </ion-header-bar>
+
+    <ion-content>
+
+
+        <ion-list>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">USERNAME</span>
+                <input type="text" placeholder="USERNAME" ng-model="username">
+            </label>
+
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">EMAIL</span>
+                <input type="email" placeholder="EMAIL" ng-model="email">
+            </label>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">PASSWORD</span>
+                <input type="password" placeholder="PASSWORD" ng-model="password">
+            </label>
+
+            <button class="button button-dark button-block" on-tap="signup(username,email,password)">Register</button>
+            <button class="button button-clear button-block" on-tap="goToLogin()">Already have an account ?</button>
+        </ion-list>
+
+
+    </ion-content>
+
+</ion-view>

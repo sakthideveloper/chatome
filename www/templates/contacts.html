@@ -1,0 +1,16 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Contacts</h1>
+        <button class="button button-icon icon ion-person-add" on-tap="addContact()"></button>
+    </ion-header-bar>
+
+    <ion-content>
+        <ion-list>
+            <ion-item ng-show="items != 'addSome'" ng-repeat="item in items" class="item item-avatar" ui-sref="message({id:item.username})" ng-click="contactClicked(item.username,item.displayName,item.avatar._url,item.avatarThumb._url)">
+                <img ng-src="{{item.avatarThumb._url}}">
+                {{item.displayName}}
+            </ion-item>
+            <ion-item ng-show="items == 'addSome' ">{{'Your list is empty try adding some friends'}}</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-header-bar class="bar bar-header bar-dark">
+        <h1 class="title">Profile</h1>
+    </ion-header-bar>
+
+    
+    <ion-content>
+
+
+        <label for="userProPic" ><img ng-src="{{userAvatar}}" style=" display: block;margin-left: auto;margin-right: auto ; height: 75vh;width: 100vw" on-tap="propic()">
+
+               </label>
+
+        <input hidden id="userProPic" type='file' ng-model='avatar' base-sixty-four-input ng-change="updateAvatar(avatar)" accept="image/*">
+
+        <label class="item item-input">
+            <span class="input-label">Display Name</span>
+            <input type="text" ng-model="dn" ng-enter="updateDn(dn)">
+        </label>
+
+    </ion-content>
+</ion-view>

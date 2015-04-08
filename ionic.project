@@ -1,0 +1,11 @@
+{
+  "name": "Chatome",
+  "app_id": "8f855844",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "13.41.318.0"
+    }
+  ]
+}
